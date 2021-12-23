@@ -1,0 +1,27 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Tide Extremes</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @tide_extremes.each do |tide_extreme| %>
+      <%= tide_extreme.time %>
+      <%= tide_extreme.type %>
+      <tr>
+        <td><%= link_to 'Show', tide_extreme %></td>
+        <td><%= link_to 'Edit', edit_tide_extreme_path(tide_extreme) %></td>
+        <td><%= link_to 'Destroy', tide_extreme, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Tide Extreme', new_tide_extreme_path %>

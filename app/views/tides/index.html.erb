@@ -1,0 +1,25 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Tides</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @tides.each do |tide| %>
+      <tr>
+        <td><%= link_to 'Show', tide %></td>
+        <td><%= link_to 'Edit', edit_tide_path(tide) %></td>
+        <td><%= link_to 'Destroy', tide, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Tide', new_tide_path %>

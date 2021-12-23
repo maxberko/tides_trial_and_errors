@@ -10,10 +10,26 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_12_22_144557) do
+ActiveRecord::Schema.define(version: 2021_12_22_170204) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "tide_extremes", force: :cascade do |t|
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.string "type"
+    t.date "time"
+    t.float "height"
+  end
+
+  create_table "tides", force: :cascade do |t|
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.string "type"
+    t.date "time"
+    t.float "height"
+  end
 
   create_table "users", force: :cascade do |t|
     t.string "email", default: "", null: false
